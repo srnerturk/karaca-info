@@ -1,5 +1,8 @@
 # Karaca Mobile App - Proje Altyapı Analizi
 
+[Core Modülü](/core.md)
+[Controller Modülü](/controllers.md)
+
 ## 1. Temel Proje Yapılandırması
 
 ### Geliştirme Ortamı
