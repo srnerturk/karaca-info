@@ -143,11 +143,24 @@ class AssistBoxViewModel extends GetxController {
 
 1. **Hassas Veri Yönetimi**
    ```dart
-   // Mevcut ❌
-   static const API_KEY = "hardcoded_value";
+   // Mevcut Durum
+   // Hassas veriler dotenv üzerinden yönetiliyor
+   await _storifyMePlugin.initPlugin(
+     {
+       Params.API_KEY_ID: dotenv.env["STORIFYME_API_KEY_ID"],
+       Params.ACCOUNT_ID_KEY: dotenv.env["STORIFYME_ACCOUNT_ID_KEY"],
+     },
+   );
    
-   // Önerilen ✅
-   final apiKey = await SecureStorage.getApiKey();
+   // İyileştirme Önerisi
+   class SecureConfigManager {
+     static Future<Map<String, String>> getStorifyMeConfig() async {
+       return {
+         Params.API_KEY_ID: await SecureStorage.getKey("STORIFYME_API_KEY_ID"),
+         Params.ACCOUNT_ID_KEY: await SecureStorage.getKey("STORIFYME_ACCOUNT_ID_KEY"),
+       };
+     }
+   }
    ```
 
 2. **Token Management**
