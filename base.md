@@ -642,5 +642,3 @@ dart format --set-exit-if-changed .
    - Import sıralaması düzenlenmesi
    - Boşluk ve girinti standardizasyonu
 
-Bu lint ve naming convention analizi, projenin kod kalitesini artırmak için sürekli güncellenecek ve takip edilecektir.
-```
